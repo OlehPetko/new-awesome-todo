@@ -1,0 +1,23 @@
+.taskPanel {
+    margin-bottom: 40px;
+}
+
+.taskPanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.taskPanel input {
+    width: 45%;
+    height: 25px;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: bisque;
+    cursor: pointer
+}
+.taskPanel input:hover {
+    background-color: rgb(2240, 240, 155);
+}

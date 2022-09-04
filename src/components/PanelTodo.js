@@ -1,5 +1,6 @@
 import Button from "../UI/Button";
 import {useState} from "react";
+import styles from './PanelTodo.module.css'
 
 const PanelTodo = ({addTask}) => {
 
@@ -10,7 +11,7 @@ const PanelTodo = ({addTask}) => {
         setNewTask('')
     }
   return(
-      <div>
+      <div className={styles.taskPanel}>
           <form onSubmit={onSubmitHandler}>
               <input placeholder='Add new task' value={newTask} onChange={e => setNewTask(e.target.value)}/>
               <Button type='submit' title='Add task'>Add task</Button>
