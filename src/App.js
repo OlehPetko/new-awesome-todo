@@ -10,13 +10,17 @@ function App() {
         setTask([...task, {id: Math.random(), title: newTask, isCompleted: false}])
     }
     const completedTaskCount = task.filter(task => task.isCompleted).length
+    const deleteTask = (id) => {
+      setTask(task.filter(task => task.id !== id))
+    }
 
     return (
         <div className="App">
             <h1>To Do</h1>
             <PanelTodo addTask={addTask}/>
+            {task.length !== 0 && <TaskActions completedTaskCount={!!completedTaskCount} />}
             <TaskActions completedTaskCount={!!completedTaskCount} />
-            <ListTask task={task}/>
+            <ListTask task={task} deleteTask={deleteTask}/>
         </div>
     );
 }
