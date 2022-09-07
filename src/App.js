@@ -11,6 +11,9 @@ function App() {
     }
     const completedTaskCount = task.filter(task => task.isCompleted).length
 
+
+
+
     const deleteTask = (id) => {
       setTask(task.filter(task => task.id !== id))
     }
@@ -28,8 +31,10 @@ function App() {
         <div className="App">
             <h1>To Do</h1>
             <PanelTodo addTask={addTask}/>
-            {task.length !== 0 && <TaskActions deleteCompletedTask={deleteCompletedTask} resetAllTask={resetAllTask} completedTaskCount={!!completedTaskCount} />}
+            {task.length !== 0 && <TaskActions deleteCompletedTask={deleteCompletedTask} resetAllTask={resetAllTask} completedTaskCount={completedTaskCount} />}
             <ListTask task={task} deleteTask={deleteTask}  toggleTask={toggleTask}/>
+            {completedTaskCount > 1 && (<h2>{`You have completed ${completedTaskCount} todos`}</h2>) }
+            {completedTaskCount === 1 && (<h2>{`You have completed ${completedTaskCount} todo`}</h2>) }
         </div>
     );
 }

@@ -6,7 +6,7 @@ const TaskActions = ({ completedTaskCount, resetAllTask, deleteCompletedTask }) 
   return(
       <div className={styles.taskActions}>
           <Button title='Reset tasks' onClick={resetAllTask}  ><RiRefreshLine/></Button>
-          <Button disablled={!completedTaskCount} onClick={deleteCompletedTask} title='Clear reset tasks'><RiDeleteBin2Line/></Button>
+          <Button disabled={!completedTaskCount} onClick={deleteCompletedTask} title='Clear reset tasks'><RiDeleteBin2Line/></Button>
       </div>
   )
 }
